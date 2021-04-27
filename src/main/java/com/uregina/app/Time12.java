@@ -78,8 +78,8 @@ public class Time12
 		Time24 t1_24 = t1.toTime24();
 		Time24 t2_24 = t2.toTime24();
 
-		difference += (t1.getHours() - t2.getHours()) * 60;
-		difference += (t1.getMinutes() - t2.getMinutes());
+		difference += (t1_24.getHours() - t2_24.getHours()) * 60;
+		difference += (t1_24.getMinutes() - t2_24.getMinutes());
 
 		// end of your code
 		return difference;
