@@ -19,7 +19,7 @@ public class Time12
 	*/
     public Time12 (int hours, int minutes, AmPm am_pm) throws InvalidTimeException
     {
-		if(hours<1||hours>=12) throw new InvalidTimeException();
+		if(hours<1||hours>12) throw new InvalidTimeException();
 		if(minutes<0||minutes>=60) throw new InvalidTimeException();
         this.hours=hours;
 		this.minutes=minutes;
@@ -74,7 +74,7 @@ public class Time12
 	public static int subtract(Time12 t1, Time12 t2)
 	{
 		int difference=0;
-		
+
 		Time24 t1_24 = t1.toTime24();
 		Time24 t2_24 = t2.toTime24();
 
