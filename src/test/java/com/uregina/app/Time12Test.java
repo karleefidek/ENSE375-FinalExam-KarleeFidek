@@ -26,7 +26,7 @@ public class Time12Test
     {
         try {
             Time12 t1 = new Time12(1, 14, AmPm.pm);
-            Time12 t2 = new Time12(12, 0, AmPm.am);
+            Time12 t2 = new Time12(12, 0, AmPm.pm);
             assertEquals( 74, time.subtract(t1, t2));
         } catch (Exception e) {
             //TODO: handle exception
