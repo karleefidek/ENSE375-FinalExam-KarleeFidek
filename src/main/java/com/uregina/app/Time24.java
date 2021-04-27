@@ -60,7 +60,6 @@ public class Time24
 			}
 		}
 		try {
-			minute
 			time = new Time24(hours24, minutes);
 		} catch (Exception e) {
 			//TODO: handle exception
