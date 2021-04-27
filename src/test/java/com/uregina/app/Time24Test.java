@@ -13,7 +13,11 @@ public class Time24Test
     private Time24 time;
     @Before
     public void setup() {
-        time = new Time24(0, 0);
+        try {
+            time = new Time24(0, 0);
+        } catch (Exception e) {
+            
+        }
     }
 
     @Test
