@@ -126,7 +126,7 @@ public class Date
 		if(!equal(d1, d2)) {
 			if(d1.year <= d2.year){
 				if(d1.month <= d2.month) {
-					if(d1.day < d2.day) {
+					if(d1.day <= d2.day) {
 						return true;
 					}
 				}
