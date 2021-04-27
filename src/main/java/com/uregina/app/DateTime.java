@@ -54,7 +54,9 @@ public class DateTime
 		Date d2Next = d2.date.nextDate();
 
 		//Todo: add your code here
-		if (!d1.date.equal(d1, d2) && !d1.date.equal(d1Next, d2) && !d1.date.equal(d1, d2Next)) {
+		if (!d1.date.equal(d1.date, d2.date) && 
+		 !d1.date.equal(d1Next, d2.date) &&
+		 !d1.date.equal(d1.date, d2Next)) {
 			throw new MoreThanOneDayException();
 		}
 
