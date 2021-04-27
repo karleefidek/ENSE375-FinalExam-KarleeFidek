@@ -54,34 +54,33 @@ public class DateTime
 		//Todo: add your code here
 		Date d1Next = d1.date.nextDate();
 		Date d2Next = d2.date.nextDate();
-
-		Time12 endDay, begDay;
 		
 		try {
-			endDay = new Time12(11, 59, AmPm.pm);
-			begDay = new Time12(12, 0, AmPm.am);
+			Time12 endDay = new Time12(11, 59, AmPm.pm);
+			Time12 begDay = new Time12(12, 0, AmPm.am);
+
+			if (!d1.date.equal(d1.date, d2.date) && 
+				!d1.date.equal(d1Next, d2.date) &&
+				!d1.date.equal(d1.date, d2Next)) {
+					throw new MoreThanOneDayException();
+			}
+
+			if (d1.date.equal(d1.date, d2.date)) {
+				diff = d1.time.subtract(d1.time, d2.time);
+			}
+			else if (d1.date.equal(d1.date, d2Next)) {
+				diff += d1.time.subtract(d1.time, begDay);
+				diff += d1.time.subtract(endDay, d2.time);
+				diff += 1;
+			}
+			else {
+				diff += d1.time.subtract(d1.time, endDay);
+				diff += d1.time.subtract(begDay, d2.time);
+				diff -= 1;
+			}
 		} catch (Exception e) {
 			//TODO: handle exception
-		}
-
-		if (!d1.date.equal(d1.date, d2.date) && 
-			!d1.date.equal(d1Next, d2.date) &&
-			!d1.date.equal(d1.date, d2Next)) {
-				throw new MoreThanOneDayException();
-		}
-
-		if (d1.date.equal(d1.date, d2.date)) {
-			diff = d1.time.subtract(d1.time, d2.time);
-		}
-		else if (d1.date.equal(d1.date, d2Next)) {
-			diff += d1.time.subtract(d1.time, begDay);
-			diff += d1.time.subtract(endDay, d2.time);
-			diff += 1;
-		}
-		else {
-			diff += d1.time.subtract(d1.time, endDay);
-			diff += d1.time.subtract(begDay, d2.time);
-			diff -= 1;
+			throw new MoreThanOneDayException();
 		}
 
 		//end of your code
