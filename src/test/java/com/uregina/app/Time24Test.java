@@ -12,7 +12,7 @@ public class Time24Test
 {
     private Time24 time;
     @BeforeAll
-    public setup {
+    public void setup {
         time = new Time24(0, 0);
     }
 
