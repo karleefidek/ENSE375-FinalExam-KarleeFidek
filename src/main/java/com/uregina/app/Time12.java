@@ -74,7 +74,12 @@ public class Time12
 	public static int subtract(Time12 t1, Time12 t2)
 	{
 		int difference=0;
-		//Todo: add your code here
+		
+		Time24 t1_24 = t1.toTime24();
+		Time24 t2_24 = t2.toTime24();
+
+		difference += (t1.getHours() - t2.getHours()) * 60;
+		difference += (t1.getMinutes() - t2.getMinutes());
 
 		// end of your code
 		return difference;
