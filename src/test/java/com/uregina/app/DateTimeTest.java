@@ -30,7 +30,7 @@ public class DateTimeTest
             
             fail("Should have thrown an exception");
         } catch (Exception e) {
-            assertEquals("Date difference is more than 1", e.getMessage(), "exception thrown");
+            assertEquals("Date difference is more than 1", e.getMessage());
         }
     }
 
