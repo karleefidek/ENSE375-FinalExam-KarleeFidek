@@ -11,7 +11,7 @@ import org.junit.*;
 public class Time24Test 
 {
     private Time24 time;
-    @BeforeAll
+    @Before
     public void setup() {
         time = new Time24(0, 0);
     }
