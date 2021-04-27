@@ -52,9 +52,13 @@ public class DateTime
 		int diff=0;
 		Date d1Next = d1.date.nextDate();
 		Date d2Next = d2.date.nextDate();
-
-		Time12 endDay = new Time12(11, 59, AmPm.pm);
-		Time12 begDay = new Time12(12, 0, AmPm.am);
+		
+		try {
+			Time12 endDay = new Time12(11, 59, AmPm.pm);
+			Time12 begDay = new Time12(12, 0, AmPm.am);
+		} catch (Exception e) {
+			//TODO: handle exception
+		}
 
 		//Todo: add your code here
 		if (!d1.date.equal(d1.date, d2.date) && 
