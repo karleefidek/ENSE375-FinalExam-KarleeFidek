@@ -26,14 +26,16 @@ public class DateTimeTest
         try {
             DateTime d1 = new DateTime(new Date(12, 20, 2000), new Time12(1, 0, AmPm.pm));
             DateTime d2 = new DateTime(new Date(12, 25, 2000), new Time12(1, 0, AmPm.pm));
-            assertThrows(MoreThanOneDayException.class, new Executable() {
-                @Override
-                public void execute() throws Throwable {
-                    dt1.subtract(d1, d2);
-                }
-            });
+            dt1.subtract(d1, d2)
+            // assertThrows(MoreThanOneDayException.class, new Executable() {
+            //     @Override
+            //     public void execute() throws Throwable {
+            //         dt1.subtract(d1, d2);
+            //     }
+            // });
         } catch (Exception e) {
             //TODO: handle exception
+            assertEquals("Date difference is more than 1", e.getMessage());
         }
     }
 
