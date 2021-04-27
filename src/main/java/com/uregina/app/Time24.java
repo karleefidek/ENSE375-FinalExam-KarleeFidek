@@ -51,7 +51,7 @@ public class Time24
 		int hours24 = 0;
 		int minutes24 = 0;
 		//Todo : add your code here
-		if(am_pm == am) {
+		if(am_pm == AmPm.am) {
 			if(hours == 12) {
 				hours24 = 0;
 			}
