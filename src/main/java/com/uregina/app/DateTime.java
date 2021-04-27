@@ -60,6 +60,17 @@ public class DateTime
 			throw new MoreThanOneDayException();
 		}
 
+		// if (d1.date.equal(d1.date, d2.date)) {
+		// 	diff = d1.time.subtract(d1.time, d2.time);
+		// }
+
+
+		// if (d1.date.equal(d1.date, d2Next)) {
+
+		// }
+
+		diff = d1.time.subtract(d1.time, d2.time);
+
 		//end of your code
 		return diff;
 	}
