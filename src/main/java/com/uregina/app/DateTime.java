@@ -71,10 +71,12 @@ public class DateTime
 			else if (d1.date.equal(d1.date, d2Next)) {
 				diff += d1.time.subtract(d1.time, begDay);
 				diff += d1.time.subtract(endDay, d2.time);
+				diff += 1;
 			}
 			else if (d1.date.equal(d1Next, d2.date)) {
 				diff += d1.time.subtract(d1.time, endDay);
 				diff += d1.time.subtract(begDay, d2.time);
+				diff -= 1;
 			}
 		} catch (Exception e) {
 			//TODO: handle exception
