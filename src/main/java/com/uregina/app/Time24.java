@@ -60,7 +60,12 @@ public class Time24
 				hours24 = hours + 12;
 			}
 		}
-		time = new Time24(hours24, minutes24);
+		try {
+			time = new Time24(hours24, minutes24);
+		} catch (Exception e) {
+			//TODO: handle exception
+			return null;
+		}
 		// End of your code
 		return time;
 	}
