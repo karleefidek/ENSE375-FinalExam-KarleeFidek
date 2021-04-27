@@ -52,7 +52,7 @@ public class DateTimeTest
         try {
             DateTime d1 = new DateTime(new Date(12, 21, 2000), new Time12(11, 0, AmPm.pm));
             DateTime d2 = new DateTime(new Date(12, 20, 2000), new Time12(1, 0, AmPm.pm));
-            assertEquals(2050, dt1.subtract(d1, d2));
+            assertEquals(2040, dt1.subtract(d1, d2));
         } catch (Exception e) {
             //TODO: handle exception
         }
@@ -64,7 +64,7 @@ public class DateTimeTest
         try {
             DateTime d1 = new DateTime(new Date(12, 20, 2000), new Time12(1, 0, AmPm.pm));
             DateTime d2 = new DateTime(new Date(12, 21, 2000), new Time12(11, 0, AmPm.pm));
-            assertEquals(-2050, dt1.subtract(d1, d2));
+            assertEquals(-2040, dt1.subtract(d1, d2));
         } catch (Exception e) {
             //TODO: handle exception
         }

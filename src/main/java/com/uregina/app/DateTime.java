@@ -59,8 +59,8 @@ public class DateTime
 			Time12 endDay = new Time12(11, 59, AmPm.pm);
 			Time12 begDay = new Time12(12, 0, AmPm.am);
 
-			if (!d1.date.equal(d1.date, d2.date) && 
-				!d1.date.equal(d1Next, d2.date) &&
+			if (!d1.date.equal(d1.date, d2.date) || 
+				!d1.date.equal(d1Next, d2.date) ||
 				!d1.date.equal(d1.date, d2Next)) {
 					throw new MoreThanOneDayException();
 			}
