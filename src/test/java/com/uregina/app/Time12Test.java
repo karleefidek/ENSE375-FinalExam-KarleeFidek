@@ -8,7 +8,7 @@ import org.junit.*;
 /**
  * Unit test for simple App.
  */
-public class Time24Test 
+public class Time12Test 
 {
     private Time12 time;
 
