@@ -48,8 +48,7 @@ public class Time24
 	public static Time24 toTime24(int hours, int minutes, AmPm am_pm)
 	{
 		Time24 time=null;
-		int hours24 = 0;
-		int minutes24 = 0;
+		int hours24 = hours;
 		//Todo : add your code here
 		if(am_pm == AmPm.am) {
 			if(hours == 12) {
@@ -61,7 +60,8 @@ public class Time24
 			}
 		}
 		try {
-			time = new Time24(hours24, minutes24);
+			minute
+			time = new Time24(hours24, minutes);
 		} catch (Exception e) {
 			//TODO: handle exception
 			return null;
