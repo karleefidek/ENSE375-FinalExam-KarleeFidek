@@ -48,9 +48,19 @@ public class Time24
 	public static Time24 toTime24(int hours, int minutes, AmPm am_pm)
 	{
 		Time24 time=null;
+		int hours24 = 0;
+		int minutes24 = 0;
 		//Todo : add your code here
-
-
+		if(am_pm == am) {
+			if(hours == 12) {
+				hours24 = 0;
+			}
+		} else {
+			if(hours >= 1 && hours < 12) {
+				hours24 = hours + 12;
+			}
+		}
+		time = new Time24(hours24, minutes24);
 		// End of your code
 		return time;
 	}
