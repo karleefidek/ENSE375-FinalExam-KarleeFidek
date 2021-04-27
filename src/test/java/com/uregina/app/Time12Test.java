@@ -25,9 +25,9 @@ public class Time12Test
     public void subtract_equalTimes_0pass()
     {
         try {
-            Time12 t1 = new Time12(12, 0, AmPm.am);
+            Time12 t1 = new Time12(1, 14, AmPm.pm);
             Time12 t2 = new Time12(12, 0, AmPm.am);
-            assertEquals( 0, time.subtract(t1, t2));
+            assertEquals( 74, time.subtract(t1, t2));
         } catch (Exception e) {
             //TODO: handle exception
         }
