@@ -24,7 +24,7 @@ public class TicketTest
         ticket.add(new Flight("KLL", "WEE", 
             new DateTime(new Date(12, 21, 2000), new Time12(11, 30, AmPm.pm)), 
             new DateTime(new Date(12, 22, 2000), new Time12(12, 0, AmPm.pm))));
-        AssertFalse(Ticket.checkTicket(ticket, 1, 9000, 9000, true));
+        assertFalse(Ticket.checkTicket(ticket, 1, 9000, 9000, true));
     }
 
 }
