@@ -99,6 +99,7 @@ public class TicketTest
         assertFalse(Ticket.checkTicket(ticket, 4, 9000, 9000, true));
     }
 
+    @Test
     public void checkTicket_arrivalNotTheSameAsDeparture_false()
     {
         ArrayList<Flight> ticket = new ArrayList<Flight>();
