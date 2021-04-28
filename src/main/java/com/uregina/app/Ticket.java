@@ -43,8 +43,6 @@ public class Ticket
 			return false;
 		}
 
-		ArrayList<String> sAirports = new ArrayList<String>();
-		sAirports.addAll(SchengenAirportsCode);
 		int totalFlightTime = 0;
 		int totalLayoverTime = 0;
 
@@ -52,9 +50,19 @@ public class Ticket
 			String arrivalAir = f.getArrivalAirport();
 			String departureAir = f.getDepatureAirport();
 
+			int schenCount = 0;
+			for(int i = 0; i < SchengenAirportsCode.length; i++) {
+				if(SchengenAirportsCode[i].equals(arrivalAir)) {
+					schenCount++;
+				}
+				if(SchengenAirportsCode[i].equals(departureAir)) {
+					schenCount++;
+				}
+			}
+
 			if((!Pattern.matches("^[A-Z]{3}$", arrivalAir)) || 
 			   (!Pattern.matches("^[A-Z]{3}$", departureAir)) ||
-			   (sAirports.contains(arrivalAir) && sAirports.contains(departureAir) && !hasSchengenVisa)){
+			   ((schenCount == 2) && !hasSchengenVisa)){
 				return false;
 			}
 			totalFlightTime += f.calculateFlightTime();
