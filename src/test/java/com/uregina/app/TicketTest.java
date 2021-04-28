@@ -62,7 +62,7 @@ public class TicketTest
         } catch (Exception e) {
             //TODO: handle exception
         }
-        assertFalse(Ticket.checkTicket(ticket, 4, 9000, 9000, true));
+        assertFalse(Ticket.checkTicket(ticket, 4, 9000, 9000, false));
     }
 
 }
