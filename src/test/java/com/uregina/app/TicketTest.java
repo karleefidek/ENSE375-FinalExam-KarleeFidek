@@ -12,8 +12,6 @@ import java.util.Arrays;
  */
 public class TicketTest 
 {
-
-    //checkTicket( ArrayList<Flight> ticket, int maxFlightsCount, int maxFlightTime, int maxLayoverTime, boolean hasSchengenVisa)
     @Test
     public void checkTicket_maxflights_false()
     {
