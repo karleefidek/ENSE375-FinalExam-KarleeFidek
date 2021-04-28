@@ -65,11 +65,21 @@ public class Ticket
 			   ((schenCount == 2) && !hasSchengenVisa)){
 				return false;
 			}
-			totalFlightTime += f.calculateFlightTime();
+			try {
+				totalFlightTime += f.calculateFlightTime();
+			} catch (Exception e) {
+				//TODO: handle exception
+				return false;
+			}
 		}
 
 		for(int i = 1; i < ticket.size(); i++) {
-			totalLayoverTime += Flight.calculateLayoverTime(ticket.get(i-1), ticket.get(i));
+			try {
+				totalLayoverTime += Flight.calculateLayoverTime(ticket.get(i-1), ticket.get(i));
+			} catch (Exception e) {
+				//TODO: handle exception
+				return false;
+			}
 			if(!ticket.get(i-1).getArrivalAirport().equals(ticket.get(i).getDepatureAirport())) {
 				return false;
 			}
