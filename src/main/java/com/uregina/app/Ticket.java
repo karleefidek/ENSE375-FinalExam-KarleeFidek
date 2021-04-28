@@ -3,6 +3,7 @@ package com.uregina.app;
 import com.uregina.exceptions.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.regex.*;
 /**
  * Class Ticket, a List of Flights in ordered sequences
  *
@@ -38,7 +39,38 @@ public class Ticket
 	public static boolean checkTicket( ArrayList<Flight> ticket, int maxFlightsCount, int maxFlightTime, int maxLayoverTime, boolean hasSchengenVisa)
 	{
 		//Todo: add your code here
-		
+		if (maxFlightsCount < ticket.size()) {
+			return false;
+		}
+
+		ArrayList<String> sAirports = new ArrayList<String>();
+		sAirports.addAll(SchengenAirportsCode);
+		int totalFlightTime = 0;
+		int totalLayoverTime = 0;
+
+		for(Flight f : ticket) {
+			String arrivalAir = f.getArrivalAirport();
+			String departureAir = f.getDepatureAirport();
+
+			if((!Pattern.matches("^[A-Z]{3}$", arrivalAir)) || 
+			   (!Pattern.matches("^[A-Z]{3}$", departureAir)) ||
+			   (sAirports.contains(arrivalAir) && sAirports.contains(departureAir) && !hasSchengenVisa)){
+				return false;
+			}
+			totalFlightTime += f.calculateFlightTime();
+		}
+
+		for(int i = 1; i < ticket.size(); i++) {
+			totalLayoverTime += Flight.calculateLayoverTime(ticket.get(i-1), ticket.get(i));
+			if(!ticket.get(i-1).getArrivalAirport().equals(ticket.get(i).getDepatureAirport())) {
+				return false;
+			}
+		}
+
+		if((maxFlightTime < totalFlightTime) ||
+		   (maxLayoverTime < totalLayoverTime)) {
+			return false;
+		}
 
 		//end of your code
 		return true;
